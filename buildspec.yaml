@@ -29,12 +29,12 @@ phases:
       # - echo $IMAGE_TAG
       # - npm run test
       - docker build --tag mingijuk-ecr:latest .
-      # - docker tag mingijuk-ecr:latest 303022694345.dkr.ecr.ap-northeast-2.amazonaws.com/mingijuk-ecr:latest
+      - docker tag mingijuk-ecr:latest 303022694345.dkr.ecr.ap-northeast-2.amazonaws.com/mingijuk-ecr:latest
   post_build:
     commands:
       - echo Build started on `date`
       - echo Pushing docker image
-      - docker push mingijuk-ecr
+      - docker push 303022694345.dkr.ecr.ap-northeast-2.amazonaws.com/mingijuk-ecr:latest
       - printf '{"name":"%s","imageUri":"%s"}' mingijuk-ecr 303022694345.dkr.ecr.ap-northeast-2.amazonaws.com/mingijuk-ecr:latest > imageDetail.json
       # - sed -i 's/<APP_NAME>/new-ecr/g' appspec.yml taskdef.json
       # - sed -i 's/<SERVICE_PORT>/8080/g' appspec.yml taskdef.json
