@@ -1,6 +1,6 @@
 {
   "ipcMode": null,
-  "executionRoleArn": null,
+  "executionRoleArn": "arn:aws:iam::303022694345:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
@@ -9,15 +9,88 @@
       "entryPoint": null,
       "portMappings": [
         {
-          "hostPort": 443,
+          "hostPort": 80,
           "protocol": "tcp",
-          "containerPort": 80
+          "containerPort": 8080
         }
       ],
       "command": null,
       "linuxParameters": null,
       "cpu": 0,
-      "environment": [],
+      "environment": [
+        {
+          "name": "DB_NAME",
+          "value": "mingijuk"
+        },
+        {
+          "name": "DEV_DB_END_POINT",
+          "value": "127.0.0.1"
+        },
+        {
+          "name": "DEV_DB_PASSWORD",
+          "value": "digh1223"
+        },
+        {
+          "name": "DEV_DB_USER",
+          "value": "root"
+        },
+        {
+          "name": "EXPRESS_PORT",
+          "value": "8080"
+        },
+        {
+          "name": "GOOGLE_CLIENT_ID",
+          "value": "201498406309-i4lfks0nsbfvl6goekg7u5im3e8vp9oh.apps.googleusercontent.com"
+        },
+        {
+          "name": "GOOGLE_CLIENT_SECRET",
+          "value": "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"
+        },
+        {
+          "name": "JWT_SECRET_KEY",
+          "value": "chlrkd6wh"
+        },
+        {
+          "name": "KAKAO_CLIENT_ID",
+          "value": "ada91876307fa84110eeeb0cbbf72f23"
+        },
+        {
+          "name": "LOCALHOST_END_POINT",
+          "value": "http://localhost:8080"
+        },
+        {
+          "name": "NAVER_CLIENT_ID",
+          "value": "FILAhXh9RPkZUi4xgKds"
+        },
+        {
+          "name": "NAVER_CLIENT_SECRET",
+          "value": "j5vv5DF2g6"
+        },
+        {
+          "name": "NODE_ENV",
+          "value": "development"
+        },
+        {
+          "name": "PRODUCT_DB_END_POINT",
+          "value": "database-1.cnozjvv4rerr.ap-northeast-2.rds.amazonaws.com"
+        },
+        {
+          "name": "PRODUCT_DB_PASSWORD",
+          "value": "q1w2e3r4"
+        },
+        {
+          "name": "PRODUCT_DB_USER",
+          "value": "master"
+        },
+        {
+          "name": "PRODUCT_END_POINT",
+          "value": "https://mingijuk.shop"
+        },
+        {
+          "name": "TOKEN_KEY",
+          "value": "SECRETKEY"
+        }
+      ],
       "resourceRequirements": null,
       "ulimits": null,
       "dnsServers": null,
@@ -56,8 +129,8 @@
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:303022694345:task-definition/mingijuk-cluster8-task:latest",
-  "family": "mingijuk-cluster8-task",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:303022694345:task-definition/mingijuk-cluster12-task:1",
+  "family": "mingijuk-cluster12-task",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -76,13 +149,19 @@
       "targetType": null,
       "value": null,
       "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-ecr-pull"
     }
   ],
   "pidMode": null,
   "requiresCompatibilities": [
     "EC2"
   ],
-  "networkMode": null,
+  "networkMode": "bridge",
   "runtimePlatform": null,
   "cpu": null,
   "revision": 1,
