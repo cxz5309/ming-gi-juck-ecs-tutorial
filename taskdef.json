@@ -11,7 +11,7 @@
         {
           "hostPort": 80,
           "protocol": "tcp",
-          "containerPort": 8080
+          "containerPort": 80
         }
       ],
       "command": null,
@@ -56,8 +56,8 @@
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:303022694345:task-definition/mingijuk-cluster5-task:latest",
-  "family": "mingijuk-cluster5-task",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:303022694345:task-definition/mingijuk-cluster7-task:latest",
+  "family": "mingijuk-cluster7-task",
   "requiresAttributes": [
     {
       "targetId": null,
@@ -88,10 +88,10 @@
   "requiresCompatibilities": [
     "EC2"
   ],
-  "networkMode": "bridge",
+  "networkMode": null,
   "runtimePlatform": null,
   "cpu": null,
-  "revision": 7,
+  "revision": 1,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
