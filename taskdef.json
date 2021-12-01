@@ -56,7 +56,7 @@
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:303022694345:task-definition/mingijuk-cluster5-task:1",
+  "taskDefinitionArn": "arn:aws:ecs:ap-northeast-2:303022694345:task-definition/mingijuk-cluster5-task:latest",
   "family": "mingijuk-cluster5-task",
   "requiresAttributes": [
     {
@@ -91,7 +91,7 @@
   "networkMode": "bridge",
   "runtimePlatform": null,
   "cpu": null,
-  "revision": 1,
+  "revision": 4,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
